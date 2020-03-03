@@ -16,6 +16,7 @@ public class MockResponse {
 		tripResponse.setConsumption("5.5");
 		
 		
+		
 		return tripResponse;
 	}
 
