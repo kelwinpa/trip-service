@@ -14,7 +14,6 @@ public class MockResponse {
 		
 		tripResponse.setVin(tripRequest.getVin());
 		tripResponse.setConsumption("5.5");
-		
 		return tripResponse;
 	}
 
