@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: trip-service
+
+server:
+  port: 8180
+ 
+basic:
+  user: test
+  password: test
