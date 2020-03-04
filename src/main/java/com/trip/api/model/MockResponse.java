@@ -9,9 +9,7 @@ import com.trip.api.response.TripResponse;
 public class MockResponse {
 
 	public TripResponse mockResponse(TripRequest tripRequest) {
-
 		TripResponse tripResponse = new TripResponse();
-		
 		tripResponse.setVin(tripRequest.getVin());
 		tripResponse.setConsumption("5.5");
 		return tripResponse;
