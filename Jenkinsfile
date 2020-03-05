@@ -16,8 +16,9 @@ node{
 		}
 		sh 'docker push stevenxs/trip-service:latest'
 	}
-	stage('Deploy') {		                
-		sh 'cd trip/templates' 
+	stage('Deploy') {
+		sh 'pwd'		                
+		sh 'cd templates' 
 		sh 'kubectl create -f trip-service-deployment-manifest.yaml'
 
     }
