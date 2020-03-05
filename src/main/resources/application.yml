@@ -8,3 +8,6 @@ server:
 basic:
   user: test
   password: test
+  
+endpoint:
+  url: https://geocode.xyz/
