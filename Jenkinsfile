@@ -2,7 +2,7 @@ node{
 	stage('git clone'){
 		git credentialsId: 'git-creds', url: 'https://github.com/kelwinpa/trip-service'
 	}
-		stage('maven package'){
+	stage('maven package'){
 		def MVV_HOME = tool name: 'Maven-3', type: 'maven'
 		def MVN_CMD = "${MVV_HOME}/bin/mvn"
 		sh "${MVN_CMD} clean compile package"
@@ -17,7 +17,7 @@ node{
 		sh 'docker push stevenxs/trip-service:latest'
 	}
 	stage('Deploy') {
-		sh '~/place/where/kubectl/installed/kubectl create -f trip-service-deployment-manifest.yaml'
+		sh 'kubectl create -f trip-service-deployment-manifest.yaml'
 
     }
 }

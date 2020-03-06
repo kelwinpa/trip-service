@@ -14,7 +14,7 @@ spec:
     spec:
        containers:
         - name: trip-service
-          image: stevenxs/trip-service
+          image: stevenxs/trip-service:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 8180
