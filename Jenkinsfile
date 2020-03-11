@@ -23,7 +23,7 @@ node{
         script{
         		try{
         			sh "sh ubuntu@18.222.252.18 kubectl apply -f ."
-        		}catch{
+        		}catch(error){
         			sh "sh ubuntu@18.222.252.18 kubectl create -f ."
         		}
         }
