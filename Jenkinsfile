@@ -22,9 +22,9 @@ node{
         }
         script{
         		try{
-        			sh "ssh ubuntu@18.222.252.18 kubectl apply -f trip-service-deployment-manifest.yaml"
+        			sh "ssh ubuntu@18.222.252.18 kubectl apply -f ."
         		}catch(error){
-        			sh "ssh ubuntu@18.222.252.18 kubectl create -f trip-service-deployment-manifest.yaml"
+        			sh "ssh ubuntu@18.222.252.18 kubectl create -f ."
         		}
         }
     }
