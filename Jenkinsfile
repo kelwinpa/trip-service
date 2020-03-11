@@ -16,8 +16,16 @@ node{
 		}
 		sh 'docker push stevenxs/trip-service:latest'
 	}
-	stage('Deploy') {
-		sh 'kubectl create -f trip-service-deployment-manifest.yaml'
-
+	stage('Deploy to K8s') {
+	    sshagent(['k8s-server']) {
+            sh "scp -o StrictHostKeyChecking=no service-deployment-manifest.yml ubuntu@18.222.252.18"
+        }
+        script{
+        		try{
+        			sh "sh ubuntu@18.222.252.18 kubectl apply -f ."
+        		}catch{
+        			sh "sh ubuntu@18.222.252.18 kubectl create -f ."
+        		}
+        }
     }
 }
