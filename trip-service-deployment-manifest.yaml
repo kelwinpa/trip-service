@@ -32,5 +32,8 @@ spec:
      protocol: TCP
      port: 8180
      targetPort: 8180
-   clusterIP: 100.64.0.1
    type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.0.2.127
