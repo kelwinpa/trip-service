@@ -26,6 +26,8 @@ metadata:
   name: trip-service
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443,8443,31202,8180"
 spec:
    selector:
      app: trip-service
