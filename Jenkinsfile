@@ -18,13 +18,13 @@ node{
 	}
 	stage('Deploy to K8s') {
 	    sshagent(['k8s-server']) {
-            sh "scp -o StrictHostKeyChecking=no trip-service-deployment-manifest.yml ubuntu@18.222.252.18:~/"
+            sh "scp -o StrictHostKeyChecking=no trip-service-deployment-manifest.yaml ubuntu@18.222.252.18:~/"
         }
         script{
         		try{
-        			sh "sh ubuntu@18.222.252.18 kubectl apply -f trip-service-deployment-manifest.yml"
+        			sh "sh ubuntu@18.222.252.18 kubectl apply -f trip-service-deployment-manifest.yaml"
         		}catch(error){
-        			sh "sh ubuntu@18.222.252.18 kubectl create -f trip-service-deployment-manifest.yml"
+        			sh "sh ubuntu@18.222.252.18 kubectl create -f trip-service-deployment-manifest.yaml"
         		}
         }
     }
