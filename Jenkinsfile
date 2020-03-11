@@ -18,7 +18,7 @@ node{
 	}
 	stage('Deploy to K8s') {
 	    sshagent(['k8s-server']) {
-            sh "scp -o StrictHostKeyChecking=no service-deployment-manifest.yml ubuntu@18.222.252.18"
+            sh "scp -o StrictHostKeyChecking=no trip-service-deployment-manifest.yml ubuntu@18.222.252.18"
         }
         script{
         		try{
