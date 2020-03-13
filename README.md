@@ -67,7 +67,7 @@ As soon you made a push of your code in Github, Jenkins will scan your repositor
 2) maven package: Clean, Compile and Package the project.
 3) build image: Package the project into a docker image.
 4) push image: Push the image into the DockerHub repository.
-5) Deploy: Run K8S deploy in local cluster as follow.
+5) Deploy: Run K8S deploy in AWS K8s cluster as follow.
 ```sh
 kubectl create -f trip-service-deployment-manifest.yaml
 ```
