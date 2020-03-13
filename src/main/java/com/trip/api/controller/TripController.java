@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.trip.api.request.TripRequest;
 import com.trip.api.service.TripService;
 import com.trip.api.util.BaseResponse;
 import com.trip.api.util.CustomException;
@@ -23,7 +22,7 @@ public class TripController {
 	private TripService tripService;
 
 	@PostMapping
-	public ResponseEntity<BaseResponse<?>> getListPoints(@Valid @RequestBody TripRequest tripRequest) {
+	public ResponseEntity<BaseResponse<?>> writeAMessage(@Valid @RequestBody String tripRequest) {
 		try {
 			return ResponseUtils.buildSuccessOperationResponse(tripService.getListPoints(tripRequest));
 		} catch (CustomException ce) {
