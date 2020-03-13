@@ -8,7 +8,7 @@ The goal of this application is to perform the next task.
 - Use Maven to build Build, Clean and Package the project
 - DevOps Automation
 - Deploy in AWS EC2 Intances
-- 
+
 ## Devops Workflow
 
 ![alt text](images/Devops-workflow.jpg?raw=true "Devops Workflow")
