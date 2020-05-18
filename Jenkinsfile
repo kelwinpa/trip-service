@@ -1,6 +1,6 @@
 node{
     def ECR_CRD = "ecr:us-east-2:aws-ecr-admin-cred"
-    def ECR_URL = "772584673213.dkr.ecr.us-east-2.amazonaws.com/stevenxs/trip-service"
+    def ECR_URL = "https://772584673213.dkr.ecr.us-east-2.amazonaws.com/stevenxs/trip-service"
     def MVV_HOME = tool name: 'Maven-3', type: 'maven'
 	def MVN_CMD = "${MVV_HOME}/bin/mvn"
 	def IMG_DOC = "stevenxs/trip-service:latest"
