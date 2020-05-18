@@ -15,6 +15,7 @@ node{
 	}
 	stage('build image'){
 		sh "docker build -t ${IMG_DCK}:${IMG_TAG} ."
+		sh "docker build -t ${ECR_PATH}:${IMG_TAG} ."
 	}
 	stage('push image'){
 		withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPass')]) {
