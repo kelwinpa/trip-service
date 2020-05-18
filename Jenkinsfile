@@ -24,7 +24,7 @@ node{
 	}
 	stage('push in AWS ECR') {
         withDockerRegistry(credentialsId: ECR_CRD, url: ECR_URL) {
-            sh "docker push ${ECR_CRD}:${IMG_TAG}"
+            sh "docker push ${ECR_PATH}:${IMG_TAG}"
         }
     }
 	stage('Deploy to K8s') {
