@@ -14,14 +14,7 @@ node{
 		sh "${MVN_CMD} clean compile package"
 	}
 	stage('build image'){
-		sh "docker build -t ${IMG_DCK}:${IMG_TAG} ."
 		sh "docker build -t ${ECR_PATH}:${IMG_TAG} ."
-	}
-	stage('push image'){
-		withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPass')]) {
- 			sh "docker login -u stevenxs -p ${dockerPass}"
-		}
-		sh "docker push ${IMG_DCK}:${IMG_TAG}"
 	}
 	stage('push in AWS ECR') {
         withDockerRegistry(credentialsId: ECR_CRD, url: ECR_URL) {

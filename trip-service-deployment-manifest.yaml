@@ -14,7 +14,7 @@ spec:
     spec:
        containers:
         - name: trip-service
-          image: stevenxs/trip-service:latest
+          image: 772584673213.dkr.ecr.us-east-2.amazonaws.com/stevenxs/trip-service:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 8180
